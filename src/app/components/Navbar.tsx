@@ -2,13 +2,15 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X, MapPin, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about/" },
+    { name: "Portfolio", href: "/portfolio/" },
+    { name: "Services", href: "/#services" },
+    { name: "Testimonials", href: "/#testimonials" },
+    { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -32,22 +34,21 @@ export default function Navbar() {
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? "glass shadow-lg shadow-rose-gold/10 py-3"
-                    : "bg-transparent py-5"
+                ? "glass shadow-lg shadow-rose-gold/10 py-3"
+                : "bg-transparent py-5"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#home" className="flex flex-col">
-                    <span
-                        className="text-2xl sm:text-3xl font-bold tracking-tight"
-                        style={{ fontFamily: "'Playfair Display', serif", color: "#B76E79" }}
-                    >
-                        Nikky Bawa
-                    </span>
-                    <span className="text-[10px] sm:text-xs tracking-[0.3em] uppercase text-warm-gray font-medium -mt-1">
-                        Ladies Salon
-                    </span>
+                <a href="#home" className="flex items-center">
+                    <Image
+                        src="/logo.png"
+                        alt="Nikky Bawa Ladies Salon"
+                        width={160}
+                        height={48}
+                        priority
+                        className={`h-10 sm:h-12 w-auto transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+                    />
                 </a>
 
                 {/* Desktop Links */}
@@ -56,10 +57,12 @@ export default function Navbar() {
                         <a
                             key={l.name}
                             href={l.href}
-                            className="text-sm font-medium text-charcoal hover:text-rose-gold transition-colors duration-300 relative group"
+                            className={`text-sm font-medium transition-colors duration-300 relative group ${scrolled ? 'text-charcoal hover:text-rose-gold' : 'text-white/90 hover:text-white'
+                                }`}
                         >
                             {l.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-rose-gold to-gold group-hover:w-full transition-all duration-300" />
+                            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${scrolled ? 'bg-gradient-to-r from-rose-gold to-gold' : 'bg-white/80'
+                                }`} />
                         </a>
                     ))}
                 </div>
@@ -78,7 +81,7 @@ export default function Navbar() {
                         className="lg:hidden p-2 rounded-xl hover:bg-champagne/50 transition-colors"
                         aria-label="Toggle menu"
                     >
-                        {mobileOpen ? <X size={24} className="text-charcoal" /> : <Menu size={24} className="text-charcoal" />}
+                        {mobileOpen ? <X size={24} className={scrolled ? 'text-charcoal' : 'text-white'} /> : <Menu size={24} className={scrolled ? 'text-charcoal' : 'text-white'} />}
                     </button>
                 </div>
             </div>

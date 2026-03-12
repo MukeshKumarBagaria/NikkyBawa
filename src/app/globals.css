@@ -307,3 +307,24 @@ h6 {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: float 8s ease-in-out infinite;
 }
+
+/* ── Portfolio Gallery ── */
+.portfolio-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover {
+  filter: brightness(1.02);
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

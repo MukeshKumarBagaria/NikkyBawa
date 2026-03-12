@@ -1,5 +1,5 @@
 "use client";
-import { Phone } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 
 export default function FloatingButtons() {
     return (
@@ -18,14 +18,19 @@ export default function FloatingButtons() {
                 </svg>
             </a>
 
-            {/* Call Button */}
+            {/* Call Button — premium pill style */}
             <a
                 href="tel:+919981415156"
-                className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full gradient-bg flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300"
-                style={{ animation: "pulse-glow 2s ease infinite 1s" }}
+                className="fixed bottom-6 left-6 z-50 flex items-center gap-2.5 pl-4 pr-5 py-3 rounded-full bg-white shadow-2xl border border-champagne hover:shadow-rose-gold/20 hover:border-rose-gold/30 hover:scale-105 transition-all duration-300 group"
                 aria-label="Call now"
             >
-                <Phone size={24} className="text-white" />
+                <span className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center shrink-0 group-hover:shadow-lg group-hover:shadow-rose-gold/30 transition-shadow duration-300">
+                    <Phone size={18} className="text-white" />
+                </span>
+                <span className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-wider text-warm-gray font-medium leading-tight">Call Us</span>
+                    <span className="text-sm font-bold text-charcoal leading-tight">99814 15156</span>
+                </span>
             </a>
         </>
     );

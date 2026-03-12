@@ -84,7 +84,7 @@ export default function Hero() {
                 >
                     <a
                         href="tel:+919981415156"
-                        className="group flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-base gradient-bg-animated hover:shadow-2xl hover:shadow-rose-gold/40 transition-all duration-500 shimmer-btn"
+                        className="group flex items-center gap-3 px-8 py-4 rounded-full font-bold text-base bg-white text-rose-gold-dark hover:bg-champagne hover:shadow-2xl hover:shadow-white/30 transition-all duration-500 shimmer-btn"
                     >
                         <Calendar size={20} />
                         Book Appointment
