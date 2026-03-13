@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
 import Services from "./components/Services";
+import PortfolioShowcase from "./components/PortfolioShowcase";
 import CTABanner from "./components/CTABanner";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
@@ -17,6 +18,7 @@ export default function Home() {
         <hr className="section-divider" />
         <Welcome />
         <Services />
+        <PortfolioShowcase />
         <CTABanner />
         <Testimonials />
         <Contact />
