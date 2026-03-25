@@ -8,6 +8,7 @@ import Journey from "./components/Journey";
 import Philosophy from "./components/Philosophy";
 import Commitment from "./components/Commitment";
 import AboutCTA from "./components/AboutCTA";
+import AwardVideoSection from "./components/AwardVideoSection";
 
 export const metadata: Metadata = {
     title: "About Us – Nikky Bawa Ladies Salon | Trusted Beauty Experts Since 1982",
@@ -31,6 +32,7 @@ export default function AboutPage() {
                 <Journey />
                 <Philosophy />
                 <Commitment />
+                <AwardVideoSection />
                 <AboutCTA />
             </main>
             <Footer />

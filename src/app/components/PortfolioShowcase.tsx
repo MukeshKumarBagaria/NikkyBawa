@@ -197,6 +197,35 @@ export default function PortfolioShowcase() {
                     </motion.div>
                 </div>
 
+                {/* ── Featured Award Video ── */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-16 sm:mb-24 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 max-w-5xl mx-auto bg-charcoal group"
+                >
+                    <div className="aspect-video relative">
+                        <video
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            controls
+                        >
+                            <source src="/videos/award.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 pointer-events-none">
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-widest border border-white/20">
+                                <Sparkles size={14} className="text-rose-gold" />
+                                Award Winning
+                            </span>
+                        </div>
+                    </div>
+                </motion.div>
+
                 {/* ── Image Grid — Staggered Parallax ── */}
                 {/* Row 1: 4 images with offset rows for depth */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 mb-3 sm:mb-5">

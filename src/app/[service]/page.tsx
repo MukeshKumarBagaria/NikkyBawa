@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingButtons from '../components/FloatingButtons';
 import Contact from '../components/Contact';
+import BestServices from '../components/BestServices';
 import servicesData from '../../../content/services.json';
 import seoData from '../../../content/seo.json';
 
@@ -183,6 +184,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         )}
 
       </main>
+      <BestServices />
       <hr className="section-divider" />
       <Contact />
       <Footer />
