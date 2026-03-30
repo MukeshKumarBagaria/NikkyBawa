@@ -197,24 +197,23 @@ export default function PortfolioShowcase() {
                     </motion.div>
                 </div>
 
-                {/* ── Featured Award Video ── */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8 }}
-                    className="mb-16 sm:mb-24 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 max-w-5xl mx-auto bg-charcoal group"
-                >
-                    <div className="aspect-video relative">
+                {/* ── Featured Award Videos (Bento Grid) ── */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 mb-16 sm:mb-24 max-w-6xl mx-auto lg:h-[500px] xl:h-[600px]">
+                    {/* Video 1 — Original Award (Vertical) */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8 }}
+                        className="lg:col-span-1 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 bg-charcoal group aspect-[3/4] sm:aspect-[9/16] lg:aspect-auto w-full h-full"
+                    >
                         <video
-                            className="w-full h-full object-cover"
-                            autoPlay
-                            loop
-                            muted
+                            className="absolute inset-0 w-full h-full object-cover"
+                            preload="metadata"
                             playsInline
                             controls
                         >
-                            <source src="/videos/award.mp4" type="video/mp4" />
+                            <source src="/videos/ award.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 pointer-events-none">
@@ -223,8 +222,33 @@ export default function PortfolioShowcase() {
                                 Award Winning
                             </span>
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+
+                    {/* Video 2 — Kareena Kapoor Award (Horizontal) */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, delay: 0.15 }}
+                        className="lg:col-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 bg-charcoal group aspect-video lg:aspect-auto w-full h-full"
+                    >
+                        <video
+                            className="absolute inset-0 w-full h-full object-cover"
+                            preload="metadata"
+                            playsInline
+                            controls
+                        >
+                            <source src="/videos/kareena-kappor-nikkibawa-award.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 pointer-events-none">
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-widest border border-white/20">
+                                <Sparkles size={14} className="text-rose-gold" />
+                                International Quality Award
+                            </span>
+                        </div>
+                    </motion.div>
+                </div>
 
                 {/* ── Image Grid — Staggered Parallax ── */}
                 {/* Row 1: 4 images with offset rows for depth */}

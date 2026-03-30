@@ -41,27 +41,56 @@ export default function AwardVideoSection() {
                     </motion.p>
                 </div>
 
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, scale: 0.95, y: 40 }}
-                    animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="relative max-w-5xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 bg-charcoal"
-                >
-                    <div className="aspect-video relative">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto lg:h-[500px] xl:h-[600px]">
+                    {/* Video 1 — Original Award (Vertical) */}
+                    <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, scale: 0.95, y: 40 }}
+                        animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="lg:col-span-1 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 bg-charcoal group aspect-[3/4] sm:aspect-[9/16] lg:aspect-auto w-full h-full"
+                    >
                         <video
-                            className="w-full h-full object-cover"
-                            autoPlay
-                            loop
-                            muted
+                            className="absolute inset-0 w-full h-full object-cover"
+                            preload="metadata"
                             playsInline
                             controls
                         >
-                            <source src="/videos/award.mp4" type="video/mp4" />
+                            <source src="/videos/ award.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
-                    </div>
-                </motion.div>
+                        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 pointer-events-none">
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-widest border border-white/20">
+                                <Award size={14} className="text-rose-gold" />
+                                Award Ceremony
+                            </span>
+                        </div>
+                    </motion.div>
+
+                    {/* Video 2 — Kareena Kapoor Award (Horizontal) */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: 40 }}
+                        animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="lg:col-span-2 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-rose-gold/20 bg-charcoal group aspect-video lg:aspect-auto w-full h-full"
+                    >
+                        <video
+                            className="absolute inset-0 w-full h-full object-cover"
+                            preload="metadata"
+                            playsInline
+                            controls
+                        >
+                            <source src="/videos/kareena-kappor-nikkibawa-award.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                        <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 pointer-events-none">
+                            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-widest border border-white/20">
+                                <Award size={14} className="text-rose-gold" />
+                                International Quality Award
+                            </span>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
