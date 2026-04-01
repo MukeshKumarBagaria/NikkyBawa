@@ -52,9 +52,10 @@ export default function AwardVideoSection() {
                     >
                         <video
                             className="absolute inset-0 w-full h-full object-cover"
-                            preload="metadata"
+                            preload="none"
                             playsInline
                             controls
+                            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect fill='%232C2C2C' width='1' height='1'/%3E%3C/svg%3E"
                         >
                             <source src="/videos/ award.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
@@ -76,9 +77,10 @@ export default function AwardVideoSection() {
                     >
                         <video
                             className="absolute inset-0 w-full h-full object-cover"
-                            preload="metadata"
+                            preload="none"
                             playsInline
                             controls
+                            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect fill='%232C2C2C' width='1' height='1'/%3E%3C/svg%3E"
                         >
                             <source src="/videos/kareena-kappor-nikkibawa-award.mp4" type="video/mp4" />
                             Your browser does not support the video tag.

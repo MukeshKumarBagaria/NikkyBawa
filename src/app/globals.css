@@ -317,6 +317,43 @@ h6 {
   filter: brightness(1.02);
 }
 
+/* ── Performance Optimizations ── */
+.blob {
+  will-change: transform;
+}
+
+.portfolio-card {
+  contain: layout style paint;
+}
+
+.shimmer-btn::after {
+  will-change: transform;
+}
+
+/* ── Reduced Motion Preference ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .gradient-text {
+    animation: none;
+  }
+
+  .gradient-bg-animated {
+    animation: none;
+  }
+
+  .blob {
+    animation: none;
+  }
+}
+
 @keyframes scale-in {
   from {
     opacity: 0;

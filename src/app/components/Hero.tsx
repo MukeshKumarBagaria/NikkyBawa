@@ -17,6 +17,8 @@ export default function Hero() {
                     fill
                     className="object-cover"
                     priority
+                    sizes="100vw"
+                    fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/50 to-charcoal/80" />
                 <div className="absolute inset-0 bg-gradient-to-r from-deep-plum/30 to-transparent" />

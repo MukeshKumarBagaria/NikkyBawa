@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingButtons from "../components/FloatingButtons";
 import AboutHero from "./components/AboutHero";
-import OurStory from "./components/OurStory";
-import Journey from "./components/Journey";
-import Philosophy from "./components/Philosophy";
-import Commitment from "./components/Commitment";
-import AboutCTA from "./components/AboutCTA";
-import AwardVideoSection from "./components/AwardVideoSection";
+
+const OurStory = dynamic(() => import("./components/OurStory"), { ssr: true });
+const Journey = dynamic(() => import("./components/Journey"), { ssr: true });
+const Philosophy = dynamic(() => import("./components/Philosophy"), { ssr: true });
+const Commitment = dynamic(() => import("./components/Commitment"), { ssr: true });
+const AwardVideoSection = dynamic(() => import("./components/AwardVideoSection"), { ssr: true });
+const AboutCTA = dynamic(() => import("./components/AboutCTA"), { ssr: true });
 
 export const metadata: Metadata = {
     title: "About Us – Nikky Bawa Ladies Salon | Trusted Beauty Experts Since 1982",

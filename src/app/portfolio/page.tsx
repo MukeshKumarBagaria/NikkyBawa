@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingButtons from "../components/FloatingButtons";
 import PortfolioHero from "./components/PortfolioHero";
-import PortfolioGallery from "./components/PortfolioGallery";
-import PortfolioCTA from "./components/PortfolioCTA";
+
+const PortfolioGallery = dynamic(() => import("./components/PortfolioGallery"), { ssr: true });
+const PortfolioCTA = dynamic(() => import("./components/PortfolioCTA"), { ssr: true });
 
 export const metadata: Metadata = {
     title: "Portfolio – Nikky Bawa Ladies Salon | Bridal Makeup Gallery Bhopal",

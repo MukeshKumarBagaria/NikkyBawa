@@ -72,6 +72,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-80" />
             </div>
@@ -136,7 +137,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                 {data.subServices.map((sub, i) => (
                   <div key={i} className="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-champagne flex flex-col hover:-translate-y-1">
                     <div className="relative h-64 w-full overflow-hidden">
-                      <Image src={sub.image} alt={sub.title} fill className="object-cover scale-[1.35] transition-transform duration-700 group-hover:scale-[1.45]" />
+                      <Image src={sub.image} alt={sub.title} fill className="object-cover scale-[1.35] transition-transform duration-700 group-hover:scale-[1.45]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" />
                     </div>
                     <div className="p-6 flex flex-col flex-grow">
                       <h4 className="font-bold text-charcoal text-xl mb-3">{sub.title}</h4>

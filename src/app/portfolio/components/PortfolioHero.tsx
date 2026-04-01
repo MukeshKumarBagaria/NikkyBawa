@@ -15,7 +15,8 @@ export default function PortfolioHero() {
                             alt=""
                             fill
                             className="object-cover blur-sm scale-110"
-                            priority
+                            loading="eager"
+                            sizes="33vw"
                             aria-hidden="true"
                         />
                     </div>
@@ -25,7 +26,8 @@ export default function PortfolioHero() {
                             alt=""
                             fill
                             className="object-cover blur-sm scale-110"
-                            priority
+                            loading="eager"
+                            sizes="33vw"
                             aria-hidden="true"
                         />
                     </div>
@@ -35,7 +37,8 @@ export default function PortfolioHero() {
                             alt=""
                             fill
                             className="object-cover blur-sm scale-110"
-                            priority
+                            loading="eager"
+                            sizes="33vw"
                             aria-hidden="true"
                         />
                     </div>

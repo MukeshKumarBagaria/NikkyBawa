@@ -35,6 +35,7 @@ function StarField() {
         if (!ctx) return;
 
         let animationId: number;
+        let isVisible = false;
         const stars: { x: number; y: number; size: number; opacity: number; speed: number; phase: number }[] = [];
 
         const resize = () => {
@@ -44,8 +45,8 @@ function StarField() {
         resize();
         window.addEventListener("resize", resize);
 
-        // Create stars
-        for (let i = 0; i < 60; i++) {
+        // Reduced star count for better performance
+        for (let i = 0; i < 30; i++) {
             stars.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
@@ -57,6 +58,10 @@ function StarField() {
         }
 
         const animate = (time: number) => {
+            if (!isVisible) {
+                animationId = requestAnimationFrame(animate);
+                return;
+            }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             stars.forEach((star) => {
                 const twinkle = Math.sin(time * star.speed + star.phase) * 0.3 + 0.7;
@@ -73,11 +78,20 @@ function StarField() {
             });
             animationId = requestAnimationFrame(animate);
         };
+
+        // Only animate when footer is visible
+        const observer = new IntersectionObserver(
+            ([entry]) => { isVisible = entry.isIntersecting; },
+            { threshold: 0.01 }
+        );
+        observer.observe(canvas);
+
         animationId = requestAnimationFrame(animate);
 
         return () => {
             cancelAnimationFrame(animationId);
             window.removeEventListener("resize", resize);
+            observer.disconnect();
         };
     }, []);
 

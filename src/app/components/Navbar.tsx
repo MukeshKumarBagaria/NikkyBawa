@@ -74,6 +74,7 @@ export default function Navbar() {
                         width={160}
                         height={48}
                         priority
+                        fetchPriority="high"
                         className={`h-10 sm:h-12 w-auto transition-all duration-300 ${isScrolledOrNotHome ? '' : 'brightness-0 invert'}`}
                     />
                 </a>

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingButtons from "../components/FloatingButtons";
 import ContactHero from "./components/ContactHero";
-import ContactInfo from "./components/ContactInfo";
-import ContactForm from "./components/ContactForm";
+
+const ContactInfo = dynamic(() => import("./components/ContactInfo"), { ssr: true });
+const ContactForm = dynamic(() => import("./components/ContactForm"), { ssr: true });
 
 export const metadata: Metadata = {
     title: "Contact Us & Book Appointment – Nikky Bawa Ladies Salon",
