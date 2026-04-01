@@ -9,7 +9,7 @@ const CTABanner = dynamic(() => import("./components/CTABanner"), { ssr: true })
 const Testimonials = dynamic(() => import("./components/Testimonials"), { ssr: true });
 const Contact = dynamic(() => import("./components/Contact"), { ssr: true });
 const Footer = dynamic(() => import("./components/Footer"), { ssr: true });
-const FloatingButtons = dynamic(() => import("./components/FloatingButtons"), { ssr: false });
+const FloatingButtons = dynamic(() => import("./components/FloatingButtons"), { ssr: true });
 
 export default function Home() {
   return (
